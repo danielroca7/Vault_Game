@@ -4,14 +4,17 @@ using System.Collections;
 
 public class GameData : MonoBehaviour {
 
-	public Texture texturaFondo;
-	public Texture texturaBoton;
 	private string _userName;
 	public float musicVolume;
 	public float soundFXVolume;
+
+	[HideInInspector]
 	public string refAccount;
+	[HideInInspector]
 	public string phone;
+	[HideInInspector]
 	public string mail;
+
 	public GUISkin mySkin;
 	private AudioClip pista;
 

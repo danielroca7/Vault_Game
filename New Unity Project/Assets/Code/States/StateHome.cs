@@ -31,17 +31,17 @@ namespace Assets.Code.States
 
 			}
 
-			if(GUI.Button(new Rect(Screen.width * 0.1f, Screen.height * 0.8f, 50, 30), "Perfil"))
+			if(GUI.Button(new Rect(Screen.width * 0.1f, Screen.height * 0.8f, 50, 50), "Perfil", "buttonProfile"))
 			{
 				manager.SwitchState(new StateProfile(manager));
 			}
 			
-			if(GUI.Button(new Rect(Screen.width * 0.4f, Screen.height * 0.8f, 50, 30), "Confi."))
+			if(GUI.Button(new Rect(Screen.width * 0.4f, Screen.height * 0.8f, 50, 50), "Confi.", "buttonConfig"))
 			{
 				manager.SwitchState(new StateMenu(manager));
 			}
 			
-			if(GUI.Button(new Rect(Screen.width * 0.7f,Screen.height * 0.8f, 50, 30), "Tienda"))
+			if(GUI.Button(new Rect(Screen.width * 0.7f,Screen.height * 0.8f, 50, 50), "Tienda", "buttonStore"))
 			{
 				
 			}

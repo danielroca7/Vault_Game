@@ -9,6 +9,7 @@ namespace Assets.Code.States
 		private float musicVolume;
 		private float soundFXVolume;
 		private Rect titleScreenPos;
+		private GUISkin mySkin;
 
 		public StateMenu (GameManager managerRef)
 		{
@@ -16,6 +17,8 @@ namespace Assets.Code.States
 
 			if(Application.loadedLevelName != "Menu")
 				Application.LoadLevel("Menu");
+
+			mySkin = manager.gameDataRef.mySkin;
 		}
 
 		public void OnStateLevelLoad (int level)
@@ -45,7 +48,9 @@ namespace Assets.Code.States
 
 		public void ShowIt ()
 		{
-			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.1f, 20, 20), new GUIContent("X", "Click para salir")))
+			GUI.skin = mySkin;
+		
+			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.1f, 20, 20), new GUIContent("", "Click para salir"), "buttonClose"))
 			{
 				manager.SwitchState(new StateHome(manager));
 			}

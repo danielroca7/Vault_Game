@@ -13,6 +13,7 @@ namespace Assets.Code.States
 		private bool editable;
 		private Rect positionButton;
 		private Rect titleScreenPos;
+		private GUISkin mySkin;
 
 		public StateProfile (GameManager managerRef)
 		{
@@ -20,6 +21,8 @@ namespace Assets.Code.States
 			editable = false;
 			if(Application.loadedLevelName != "Perfil")
 				Application.LoadLevel("Perfil");
+
+			mySkin = manager.gameDataRef.mySkin;
 		}
 
 		public void OnStateLevelLoad (int level)
@@ -33,14 +36,14 @@ namespace Assets.Code.States
 
 		public void StateUpdate ()
 		{
-			Debug.Log("refAcc: " + manager.gameDataRef.refAccount);
-			Debug.Log("phone: " + manager.gameDataRef.phone);
-			Debug.Log("mail: " + manager.gameDataRef.mail);
+
 		}
 
 		public void ShowIt ()
 		{
-			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.1f, 20, 20), new GUIContent("X", "Click para salir")))
+			GUI.skin = mySkin;
+
+			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.1f, 20, 20), new GUIContent("", "Click para salir"), "buttonClose"))
 			{
 				manager.SwitchState(new StateHome(manager));
 			}
@@ -73,12 +76,12 @@ namespace Assets.Code.States
 				break;
 			}
 
-			if(GUI.Button(new Rect(positionButton.xMin, Screen.height * 0.75f, 50, 30), "Logros"))
+			if(GUI.Button(new Rect(positionButton.xMin, Screen.height * 0.75f, 50, 50), "Logros", "buttonAchiev"))
 			{
 
 			}
 
-			if(GUI.Button(new Rect(positionButton.xMin + 60, Screen.height * 0.75f, 50, 30), "Datos"))
+			if(GUI.Button(new Rect(positionButton.xMin + 60, Screen.height * 0.75f, 50, 50), "Datos", "buttonData"))
 			{
 
 			}
