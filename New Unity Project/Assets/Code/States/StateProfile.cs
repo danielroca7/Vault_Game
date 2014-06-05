@@ -6,6 +6,8 @@ namespace Assets.Code.States
 {
 	public class StateProfile : InterfacesStados
 	{
+		private GameObject guiUserName;
+		private GameObject guiPassword;
 		private GameManager manager;
 		private string refAccount;
 		private string phone;
@@ -32,6 +34,18 @@ namespace Assets.Code.States
 			this.mail = manager.gameDataRef.mail;
 			this.positionButton = GameObject.Find("GUI_pop_information").guiText.GetScreenRect();
 			titleScreenPos = GameObject.Find("GUI_pop_title").guiText.GetScreenRect();
+
+			guiUserName = GameObject.Find("GUI_pop_userName");
+			if(guiUserName != null)
+			{
+				guiUserName.GetComponent<MostrarUsuario>().DisplayText(manager.gameDataRef.userName);
+			}
+
+			guiUserName = GameObject.Find("GUI_pop_password");
+			if(guiUserName != null)
+			{
+				guiUserName.GetComponent<MostrarUsuario>().DisplayText(manager.gameDataRef.password);
+			}
 		}
 
 		public void StateUpdate ()
@@ -43,7 +57,7 @@ namespace Assets.Code.States
 		{
 			GUI.skin = mySkin;
 
-			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.1f, 20, 20), new GUIContent("", "Click para salir"), "buttonClose"))
+			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.06f, 20, 20), new GUIContent("", "Click para salir"), "buttonClose"))
 			{
 				manager.SwitchState(new StateHome(manager));
 			}
@@ -51,9 +65,9 @@ namespace Assets.Code.States
 			switch(editable)
 			{
 			case false:
-				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.44f, Screen.width * 0.45f, 20), refAccount);
-				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.52f, Screen.width * 0.45f, 20), phone);
-				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.60f, Screen.width * 0.45f, 20), mail);
+				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.69f, Screen.width * 0.45f, 20), refAccount);
+				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.34f, Screen.width * 0.45f, 20), phone);
+				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.29f, Screen.width * 0.45f, 20), mail);
 
 				if(GUI.Button(new Rect(positionButton.xMax + 20, Screen.height * 0.7f, 50, 20), "Editar"))
 				{
@@ -62,9 +76,12 @@ namespace Assets.Code.States
 				break;
 
 			case true:
-				refAccount = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.44f, Screen.width * 0.45f, 20), refAccount);
-				phone = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.52f, Screen.width * 0.45f, 20), phone);
-				mail = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.60f, Screen.width * 0.45f, 20), mail);
+				refAccount = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.44f, 
+				                                    Screen.width * 0.45f, 20), refAccount);
+				phone = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.52f, 
+				                               Screen.width * 0.45f, 20), phone);
+				mail = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.60f, 
+				                              Screen.width * 0.45f, 20), mail);
 
 				if(GUI.Button(new Rect(positionButton.xMax + 20, Screen.height * 0.7f, 50, 20), "Aceptar"))
 				{
@@ -89,20 +106,11 @@ namespace Assets.Code.States
 
 		private void IsEditable ()
 		{
-			switch(editable)
-			{
-			case true:
+			if(editable == true)
 				editable = false;
-				break;
 
-			case false:
+			else
 				editable = true;
-				break;
-
-			default:
-				Debug.Log("Application is making weird shit!");
-				break;
-			}
 		}
 	}
 }

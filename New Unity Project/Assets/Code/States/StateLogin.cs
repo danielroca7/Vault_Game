@@ -38,6 +38,7 @@ namespace Assets.Code.States
 			              new GUIContent("Entrar", "Rellena el <i>usuario</i> y <b>contrasenia</b> primero")))
 			{
 				manager.gameDataRef.userName = this.userName;
+				manager.gameDataRef.password = this.password;
 				manager.SwitchState(new StateHome(manager));
 			}
 

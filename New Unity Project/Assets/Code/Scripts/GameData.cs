@@ -4,7 +4,8 @@ using System.Collections;
 
 public class GameData : MonoBehaviour {
 
-	private string _userName;
+	public string userName;
+	public string password;
 	public float musicVolume;
 	public float soundFXVolume;
 
@@ -16,20 +17,7 @@ public class GameData : MonoBehaviour {
 	public string mail;
 
 	public GUISkin mySkin;
-	private AudioClip pista;
-
-	public string userName
-	{
-		get
-		{
-			return this._userName;
-		}
-
-		set
-		{
-			this._userName = value;
-		}
-	}
+	//private AudioClip pista;
 
 	void Start ()
 	{
@@ -39,7 +27,7 @@ public class GameData : MonoBehaviour {
 		refAccount = "xxx-xxxx-xxxx-xx";
 		phone = "(xxx) xxx-xxxx";
 		mail = "e.mail123@mail.com";
-		pista = audio.clip;
+		//pista = audio.clip;
 	}
 
 	void Update ()
