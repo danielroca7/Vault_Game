@@ -16,6 +16,8 @@ namespace Assets.Code.States
 		private Rect positionButton;
 		private Rect titleScreenPos;
 		private GUISkin mySkin;
+		private int toolbarInt;
+		private Texture[] toolbarTex;
 
 		public StateProfile (GameManager managerRef)
 		{
@@ -24,7 +26,7 @@ namespace Assets.Code.States
 			if(Application.loadedLevelName != "Perfil")
 				Application.LoadLevel("Perfil");
 
-			mySkin = manager.gameDataRef.mySkin;
+			this.mySkin = manager.gameDataRef.mySkin;
 		}
 
 		public void OnStateLevelLoad (int level)
@@ -33,9 +35,10 @@ namespace Assets.Code.States
 			this.phone = manager.gameDataRef.phone;
 			this.mail = manager.gameDataRef.mail;
 			this.positionButton = GameObject.Find("GUI_pop_information").guiText.GetScreenRect();
-			titleScreenPos = GameObject.Find("GUI_pop_title").guiText.GetScreenRect();
+			this.titleScreenPos = GameObject.Find("GUI_pop_title").guiText.GetScreenRect();
+			this.toolbarTex = manager.gameDataRef.payMethod;
 
-			guiUserName = GameObject.Find("GUI_pop_userName");
+			this.guiUserName = GameObject.Find("GUI_pop_userName");
 			if(guiUserName != null)
 			{
 				guiUserName.GetComponent<MostrarUsuario>().DisplayText(manager.gameDataRef.userName);
@@ -62,26 +65,22 @@ namespace Assets.Code.States
 				manager.SwitchState(new StateHome(manager));
 			}
 
-			switch(editable)
+			switch(editable) //Para editar el campo de telefono y correo cuando se oprime el boton "editar" o "aceptar"
 			{
 			case false:
-				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.69f, Screen.width * 0.45f, 20), refAccount);
 				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.34f, Screen.width * 0.45f, 20), phone);
 				GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.29f, Screen.width * 0.45f, 20), mail);
 
-				if(GUI.Button(new Rect(positionButton.xMax + 20, Screen.height * 0.7f, 50, 20), "Editar"))
+				if(GUI.Button(new Rect(positionButton.xMax + 20, Screen.height * 0.8f, 50, 20), "Editar"))
 				{
 					IsEditable();
 				}
 				break;
 
 			case true:
-				refAccount = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.44f, 
-				                                    Screen.width * 0.45f, 20), refAccount);
-				phone = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.52f, 
-				                               Screen.width * 0.45f, 20), phone);
-				mail = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.60f, 
-				                              Screen.width * 0.45f, 20), mail);
+
+				phone = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.34f, Screen.width * 0.45f, 20), phone);
+				mail = GUI.TextField(new Rect(Screen.width * 0.45f, Screen.height * 0.29f, Screen.width * 0.45f, 20), mail);
 
 				if(GUI.Button(new Rect(positionButton.xMax + 20, Screen.height * 0.7f, 50, 20), "Aceptar"))
 				{
@@ -93,17 +92,31 @@ namespace Assets.Code.States
 				break;
 			}
 
-			if(GUI.Button(new Rect(positionButton.xMin, Screen.height * 0.75f, 50, 50), "Logros", "buttonAchiev"))
+			GUI.Box(new Rect(Screen.width * 0.45f, Screen.height * 0.74f, Screen.width * 0.45f, 20), refAccount);
+
+			//barra de seleccion de metodo de pago
+			toolbarInt = GUI.Toolbar(new Rect(Screen.width * 0.5f, Screen.height * 0.64f, 40, 40), 
+			                               toolbarInt, toolbarTex, "toggle");
+
+			if(GUI.Button(new Rect(positionButton.xMin, Screen.height * 0.84f, 50, 50), "Logros", "buttonAchiev"))
 			{
 
 			}
 
-			if(GUI.Button(new Rect(positionButton.xMin + 60, Screen.height * 0.75f, 50, 50), "Datos", "buttonData"))
+			if(GUI.Button(new Rect(positionButton.xMin + 60, Screen.height * 0.84f, 50, 50), "Datos", "buttonData"))
 			{
 
 			}
 		}
 
+		/**
+		 * <summary>
+		 * funcion encargada de modificar el valor de la booleana "editable"
+		 * </summary>
+		 * 
+		 * @param
+		 * @return
+		 */
 		private void IsEditable ()
 		{
 			if(editable == true)

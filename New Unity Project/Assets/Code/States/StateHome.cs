@@ -28,7 +28,7 @@ namespace Assets.Code.States
 
 			if(GUI.Button(new Rect(Screen.width * 0.35f, Screen.height * 0.7f,70, 20), "Iniciar"))
 			{
-
+				manager.SwitchState(new StatePlay(manager));
 			}
 
 			if(GUI.Button(new Rect(Screen.width * 0.1f, Screen.height * 0.8f, 50, 50), "Perfil", "buttonProfile"))

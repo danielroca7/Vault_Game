@@ -50,27 +50,35 @@ namespace Assets.Code.States
 		{
 			GUI.skin = mySkin;
 		
-			if(GUI.Button(new Rect(titleScreenPos.xMax, Screen.height * 0.1f, 20, 20), new GUIContent("", "Click para salir"), "buttonClose"))
+			if(GUI.Button(new Rect(titleScreenPos.xMax + 10, Screen.height * (1 - titleScreenPos.yMin / Screen.height) - 20,
+			                       20, 20), new GUIContent("", "Click para salir"), "buttonClose"))
 			{
 				manager.SwitchState(new StateHome(manager));
 			}
 
-			musicVolume = GUI.HorizontalSlider(new Rect(Screen.width * 0.65f, Screen.height * 0.28f, Screen.width * 0.25f, 20), musicVolume, 0, 1);
-			soundFXVolume = GUI.HorizontalSlider(new Rect(Screen.width * 0.65f, Screen.height * 0.20f, Screen.width * 0.25f, 20), soundFXVolume, 0, 1);
+			musicVolume = GUI.HorizontalSlider(new Rect(Screen.width * 0.65f, Screen.height * 0.28f,
+			                                            Screen.width * 0.25f, 20), musicVolume, 0, 1);
+			soundFXVolume = GUI.HorizontalSlider(new Rect(Screen.width * 0.65f, Screen.height * 0.20f,
+			                                              Screen.width * 0.25f, 20), soundFXVolume, 0, 1);
 
-			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f, Screen.width - Screen.width*0.4f, 20), "Reglas de Juego"))
+			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f, Screen.width - Screen.width*0.4f, 20), 
+			              "Reglas de Juego"))
 			{}
 
-			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 30, Screen.width - Screen.width*0.4f, 20), "Creditos"))
+			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 30, Screen.width - Screen.width*0.4f, 20),
+			              "Creditos"))
 			{}
 
-			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 60, Screen.width - Screen.width*0.4f, 20), "Terminos y Condiciones"))
+			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 60, Screen.width - Screen.width*0.4f, 20),
+			              "Terminos y Condiciones"))
 			{}
 
-			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 90, Screen.width - Screen.width*0.4f, 20), "Politicas de Privacidad"))
+			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 90, Screen.width - Screen.width*0.4f, 20),
+			              "Politicas de Privacidad"))
 			{}
 
-			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 120, Screen.width - Screen.width*0.4f, 20), "Soporte Tecnico"))
+			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f + 120, Screen.width - Screen.width*0.4f, 20),
+			              "Soporte Tecnico"))
 			{}
 		}
 	}

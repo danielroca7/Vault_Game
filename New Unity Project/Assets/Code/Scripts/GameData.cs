@@ -16,8 +16,12 @@ public class GameData : MonoBehaviour {
 	[HideInInspector]
 	public string mail;
 
+	//mySkin es la skin customizada que hize para la aplicacion
 	public GUISkin mySkin;
 	//private AudioClip pista;
+
+	//Texturas2D para la pantalla de configuracion
+	public Texture[] payMethod;
 
 	void Start ()
 	{
