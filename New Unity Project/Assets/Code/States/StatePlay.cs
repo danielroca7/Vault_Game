@@ -35,6 +35,8 @@ namespace Assets.Code.States
 		public void ShowIt ()
 		{
 			GUI.skin = mySkin;
+			
+			GUI.Button (new Rect (10, 10, 100, 30), new GUIContent ("Yo soy un buton", "Yo soy el tooltip del Boton"));
 		}
 
 		public void OnStateLevelLoad (int level)

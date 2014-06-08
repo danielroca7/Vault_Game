@@ -98,6 +98,7 @@ namespace Assets.Code.States
 			toolbarInt = GUI.Toolbar(new Rect(Screen.width * 0.5f, Screen.height * 0.64f, 40, 40), 
 			                               toolbarInt, toolbarTex, "toggle");
 
+			//Este boton me permite entrar a la pantala de logros
 			if(GUI.Button(new Rect(positionButton.xMin, Screen.height * 0.84f, 50, 50), "Logros", "buttonAchiev"))
 			{
 
