@@ -7,7 +7,8 @@
 //     se vuelve a generar el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Assets.Code.Interfaces;
 
@@ -17,6 +18,11 @@ namespace Assets.Code.States
 	{
 		private GameManager manager;
 		private GUISkin mySkin;
+		private int nivel;
+		private int moduleActivo;
+		private List<GameObject> modules;
+		private List<GameObject> modulePrefabs;
+		private DataPlayState dataPlayState;
 
 		public StatePlay (GameManager managerRef)
 		{
@@ -25,23 +31,47 @@ namespace Assets.Code.States
 				Application.LoadLevel("Play");
 			
 			mySkin = manager.gameDataRef.mySkin;
+
+			modules = new List<GameObject> ();
+
+			nivel = manager.gameDataRef.nivel;
+			moduleActivo = 0;
 		}
 
 		public void StateUpdate ()
 		{
-
+			if(Application.isLoadingLevel == false && modules[0].GetComponent<RecibirMensaje>().textModule.text == "")
+			{
+				if(Comparar())
+				{
+					Debug.Log("Le acerto");
+				}
+			}
 		}
 
 		public void ShowIt ()
 		{
 			GUI.skin = mySkin;
-			
-			GUI.Button (new Rect (10, 10, 100, 30), new GUIContent ("Yo soy un buton", "Yo soy el tooltip del Boton"));
+
 		}
 
 		public void OnStateLevelLoad (int level)
 		{
+			dataPlayState = GameObject.Find ("DataPlayState").GetComponent<DataPlayState> ();
 
+			this.modulePrefabs = dataPlayState.modulePrefabs;
+
+			modules.Add(Object.Instantiate (modulePrefabs [CualEs()], modulePrefabs [CualEs()].transform.position, modulePrefabs [CualEs()].transform.rotation) as GameObject);
+		}
+
+		private int CualEs ()
+		{
+			return 0;
+		}
+
+		private bool Comparar()
+		{
+			return modules [0].guiText.text == "5"; 
 		}
 	}
 }

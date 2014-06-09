@@ -46,11 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\Interfaces\InterfacesModuleState.cs" />
      <Compile Include="Assets\Code\Interfaces\InterfacesStados.cs" />
+     <Compile Include="Assets\Code\Scripts\DataPlayState.cs" />
      <Compile Include="Assets\Code\Scripts\GameData.cs" />
      <Compile Include="Assets\Code\Scripts\GameManager.cs" />
      <Compile Include="Assets\Code\Scripts\MostrarUsuario.cs" />
+     <Compile Include="Assets\Code\Scripts\RecibirMensaje.cs" />
      <Compile Include="Assets\Code\Scripts\Rotar.cs" />
+     <Compile Include="Assets\Code\Scripts\TecladoMensaje.cs" />
      <Compile Include="Assets\Code\States\StateHome.cs" />
      <Compile Include="Assets\Code\States\StateLogin.cs" />
      <Compile Include="Assets\Code\States\StateMenu.cs" />

@@ -8,6 +8,7 @@ public class GameData : MonoBehaviour {
 	public string password;
 	public float musicVolume;
 	public float soundFXVolume;
+	public int nivel;
 
 	[HideInInspector]
 	public string refAccount;
@@ -31,6 +32,7 @@ public class GameData : MonoBehaviour {
 		refAccount = "xxx-xxxx-xxxx-xx";
 		phone = "(xxx) xxx-xxxx";
 		mail = "e.mail123@mail.com";
+		nivel = 1;
 		//pista = audio.clip;
 	}
 
