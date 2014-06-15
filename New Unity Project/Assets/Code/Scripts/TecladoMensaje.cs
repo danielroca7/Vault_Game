@@ -3,12 +3,7 @@ using System.Collections;
 
 public class TecladoMensaje : MonoBehaviour {
 
-	private RecibirMensaje modulo;
-
-	void OnLevelWasLoad ()
-	{
-		modulo = GameObject.Find ("GUI_module_" + "1").GetComponent<RecibirMensaje>();
-	}
+	public static RecibirMensaje modulo;
 
 	void OnMouseDown ()
 	{
