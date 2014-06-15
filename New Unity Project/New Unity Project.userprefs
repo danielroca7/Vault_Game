@@ -1,14 +1,15 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\States\StatePlay.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Scripts\RecibirMensaje.cs">
     <Files>
       <File FileName="Assets\Code\States\StateHome.cs" Line="57" Column="1" />
       <File FileName="Assets\Code\States\StateProfile.cs" Line="127" Column="21" />
-      <File FileName="Assets\Code\States\StatePlay.cs" Line="52" Column="7" />
+      <File FileName="Assets\Code\States\StatePlay.cs" Line="43" Column="103" />
       <File FileName="Assets\Code\Scripts\GameData.cs" Line="35" Column="13" />
-      <File FileName="Assets\Code\Scripts\TecladoMensaje.cs" Line="35" Column="10" />
-      <File FileName="Assets\Code\Scripts\GameManager.cs" Line="38" Column="17" />
-      <File FileName="Assets\Code\Scripts\RecibirMensaje.cs" Line="14" Column="29" />
+      <File FileName="Assets\Code\Scripts\TecladoMensaje.cs" Line="8" Column="21" />
+      <File FileName="Assets\Code\Scripts\GameManager.cs" Line="41" Column="4" />
+      <File FileName="Assets\Code\Scripts\RecibirMensaje.cs" Line="6" Column="8" />
+      <File FileName="Assets\Code\Scripts\DataPlayState.cs" Line="12" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
