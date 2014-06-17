@@ -61,6 +61,7 @@
      <Compile Include="Assets\Code\States\StateNewRegister.cs" />
      <Compile Include="Assets\Code\States\StatePlay.cs" />
      <Compile Include="Assets\Code\States\StateProfile.cs" />
+     <Compile Include="Assets\Code\States\StateStore.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
