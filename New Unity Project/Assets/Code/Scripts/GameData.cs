@@ -10,6 +10,7 @@ public class GameData : MonoBehaviour {
 	public float soundFXVolume;
 	public int nivel;
 
+
 	[HideInInspector]
 	public string refAccount;
 	[HideInInspector]
@@ -23,6 +24,9 @@ public class GameData : MonoBehaviour {
 
 	//Texturas2D para la pantalla de configuracion
 	public Texture[] payMethod;
+
+	//Texturas2D encabezado de la aplicacion
+	public Texture BarraEncabezadoAplicacion;
 
 	void Start ()
 	{

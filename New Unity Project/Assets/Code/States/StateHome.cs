@@ -43,7 +43,7 @@ namespace Assets.Code.States
 			
 			if(GUI.Button(new Rect(Screen.width * 0.7f,Screen.height * 0.8f, 50, 50), "Tienda", "buttonStore"))
 			{
-				
+				manager.SwitchState(new StateStore(manager));
 			}
 		}
 
