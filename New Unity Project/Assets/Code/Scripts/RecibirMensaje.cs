@@ -14,7 +14,8 @@ public class RecibirMensaje : MonoBehaviour {
 	{
 		textModule.text = mensaje;
 		Comparar ();
-		StartCoroutine (Reiniciar(2.0F));
+		StopCoroutine ("Reiniciar");
+		StartCoroutine ("Reiniciar", 2.0F);
 	}
 	
 	private IEnumerator Reiniciar (float waitTime)
