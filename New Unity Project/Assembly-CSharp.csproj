@@ -54,6 +54,7 @@
      <Compile Include="Assets\Code\Scripts\MostrarUsuario.cs" />
      <Compile Include="Assets\Code\Scripts\RecibirMensaje.cs" />
      <Compile Include="Assets\Code\Scripts\Rotar.cs" />
+     <Compile Include="Assets\Code\Scripts\TecladoActivo.cs" />
      <Compile Include="Assets\Code\Scripts\TecladoMensaje.cs" />
      <Compile Include="Assets\Code\States\StateHome.cs" />
      <Compile Include="Assets\Code\States\StateLogin.cs" />

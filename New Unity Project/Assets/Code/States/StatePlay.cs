@@ -10,7 +10,6 @@ namespace Assets.Code.States
 		private GameManager manager;
 		private GUISkin mySkin;
 		private int nivel;
-		private int moduleActivo;
 		private GameObject module;
 		private List<GameObject> modulePrefabs;
 		private DataPlayState dataPlayState;
@@ -24,7 +23,6 @@ namespace Assets.Code.States
 			mySkin = manager.gameDataRef.mySkin;
 			
 			nivel = manager.gameDataRef.nivel;
-			moduleActivo = 0;
 		}
 		
 		public void StateUpdate ()
