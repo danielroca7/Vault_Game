@@ -33,13 +33,18 @@ namespace Assets.Code.States
 		public void ShowIt ()
 		{
 			GUI.skin = mySkin;
-			
+
+			// Boton Que pasa a la vista de historial
+			if(GUI.Button(new Rect(Screen.width * 0.6f, Screen.height * 0.9f,70, 20), "Historial"))
+			{
+				manager.SwitchState(new StateHist(manager));
+			}
 		}
 		
 		public void OnStateLevelLoad (int level)
 		{
 			dataPlayState = GameObject.Find ("DataPlayState").GetComponent<DataPlayState> ();
-			
+
 			this.modulePrefabs = dataPlayState.modulePrefabs;
 			
 			// Aqui instanciamos el GUI_module_1(Clone)

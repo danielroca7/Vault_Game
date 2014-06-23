@@ -9,6 +9,8 @@ public class GameData : MonoBehaviour {
 	public float musicVolume;
 	public float soundFXVolume;
 	public int nivel;
+	public Texture imagenReloj;
+	public Texture termometro;
 
 
 	[HideInInspector]

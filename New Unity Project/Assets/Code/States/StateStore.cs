@@ -49,7 +49,7 @@ namespace Assets.Code.States
 
 			}
 
-			GUI.DrawTexture(new Rect(0, 0 , Screen.width, 50), BarraEncabezadoAplicacion, ScaleMode.ScaleToFit, true, 10.0F);
+			GUI.DrawTexture(new Rect(0, 0 , Screen.width, 50), BarraEncabezadoAplicacion, ScaleMode.StretchToFill, true, 10.0F);
 
 		}
 

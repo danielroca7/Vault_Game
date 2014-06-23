@@ -15,6 +15,7 @@ public class RecibirMensaje : MonoBehaviour {
 
 	public void EscribirEnModulo (string mensaje)
 	{
+<<<<<<< HEAD
 		textModule[moduleActivo].text = mensaje;
 		StopCoroutine("Reiniciar");
 		
@@ -27,6 +28,12 @@ public class RecibirMensaje : MonoBehaviour {
 		}
 
 
+=======
+		textModule.text = mensaje;
+		Comparar ();
+		StopCoroutine ("Reiniciar");
+		StartCoroutine ("Reiniciar", 2.0F);
+>>>>>>> origin/rama-outsider
 	}
 	
 	private IEnumerator Reiniciar (bool acierto)
