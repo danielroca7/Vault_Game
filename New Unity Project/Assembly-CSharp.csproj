@@ -55,6 +55,7 @@
      <Compile Include="Assets\Code\Scripts\RecibirMensaje.cs" />
      <Compile Include="Assets\Code\Scripts\Rotar.cs" />
      <Compile Include="Assets\Code\Scripts\TecladoMensaje.cs" />
+     <Compile Include="Assets\Code\States\StateHist.cs" />
      <Compile Include="Assets\Code\States\StateHome.cs" />
      <Compile Include="Assets\Code\States\StateLogin.cs" />
      <Compile Include="Assets\Code\States\StateMenu.cs" />
@@ -71,6 +72,9 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+ <Reference Include="TouchScript">
+ <HintPath>C:/Users/usuario/Documents/GitHub/Vault_Game/New Unity Project/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
