@@ -1,24 +1,12 @@
-<<<<<<< HEAD
-﻿<Properties>
+﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Scripts\RecibirMensaje.cs">
     <Files>
-      <File FileName="Assets\Code\Scripts\DataPlayState.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\Scripts\GameData.cs" Line="11" Column="19" />
-      <File FileName="Assets\Code\States\StatePlay.cs" Line="25" Column="38" />
-      <File FileName="Assets\Code\Scripts\RecibirMensaje.cs" Line="43" Column="26" />
-      <File FileName="Assets\Code\Scripts\TecladoMensaje.cs" Line="54" Column="1" />
-      <File FileName="Assets\Code\Scripts\TecladoActivo.cs" Line="12" Column="3" />
-=======
-﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\States\StateHist.cs">
-    <Files>
-      <File FileName="Assets\Code\States\StateStore.cs" Line="64" Column="1" />
-      <File FileName="Assets\Code\States\StateHist.cs" Line="77" Column="76" />
-      <File FileName="Assets\Code\Scripts\GameData.cs" Line="27" Column="48" />
-      <File FileName="Assets\Code\States\StatePlay.cs" Line="65" Column="1" />
->>>>>>> origin/rama-outsider
+      <File FileName="Assets\Code\Scripts\RecibirMensaje.cs" Line="26" Column="39" />
+      <File FileName="Assets\Code\Scripts\DataPlayState.cs" Line="24" Column="10" />
+      <File FileName="Assets\Code\Scripts\TecladoActivo.cs" Line="11" Column="2" />
+      <File FileName="Assets\Code\States\StatePlay.cs" Line="62" Column="1" />
+      <File FileName="Assets\Code\Scripts\GameData.cs" Line="50" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -19,7 +19,8 @@ public class RecibirMensaje : MonoBehaviour {
 	{
 		textModule[moduleActivo].text = mensaje;
 		StopCoroutine("Reiniciar");
-		
+
+		//necesito cambiar el llamado de la funcion comparar a cuando todos los modulos hayan sido escritos
 		if(Comparar ())
 		{
 			StartCoroutine ("Reiniciar", true);

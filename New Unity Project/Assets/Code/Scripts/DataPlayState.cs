@@ -9,6 +9,20 @@ public class DataPlayState : MonoBehaviour {
 
 	void Start () 
 	{
-		numeroAdivinar = Random.Range(0,1000);
+		switch(GameObject.Find("GameManager").GetComponent<GameData>().nivel)
+		{
+		case 1:
+			numeroAdivinar = Random.Range(0,10);
+			break;
+
+		case 2:
+			numeroAdivinar = Random.Range(0,100);
+			break;
+
+		case 3:
+			numeroAdivinar = Random.Range(0,1000);
+			break;
+		}
+
 	}
 }
