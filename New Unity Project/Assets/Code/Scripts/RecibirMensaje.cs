@@ -6,6 +6,8 @@ public class RecibirMensaje : MonoBehaviour {
 
 	public GUIText[] textModule;
 	private int moduleActivo;
+	// variable para concatenar los numeros y compararlos con el numero ganador
+	public string numContatenado;
     
 	void Start ()
 	{
@@ -15,7 +17,6 @@ public class RecibirMensaje : MonoBehaviour {
 
 	public void EscribirEnModulo (string mensaje)
 	{
-<<<<<<< HEAD
 		textModule[moduleActivo].text = mensaje;
 		StopCoroutine("Reiniciar");
 		
@@ -28,12 +29,10 @@ public class RecibirMensaje : MonoBehaviour {
 		}
 
 
-=======
-		textModule.text = mensaje;
+		textModule[0].text = mensaje;
 		Comparar ();
 		StopCoroutine ("Reiniciar");
 		StartCoroutine ("Reiniciar", 2.0F);
->>>>>>> origin/rama-outsider
 	}
 	
 	private IEnumerator Reiniciar (bool acierto)
@@ -53,6 +52,7 @@ public class RecibirMensaje : MonoBehaviour {
 	
 	private bool Comparar()
 	{
-		return (textModule[moduleActivo].text == "5"); 
+		return (textModule[moduleActivo].text == 
+		        GameObject.Find("DataPlayState").GetComponent<DataPlayState>().numeroAdivinar.ToString()); 
 	}
 }
