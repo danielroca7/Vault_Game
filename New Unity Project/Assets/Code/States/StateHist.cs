@@ -13,14 +13,17 @@ namespace Assets.Code.States
 		private Texture imagenReloj;
 		private Texture termometro;
 
+
 		// Variable que indica la posicion en Y de los iconos de tienda, datos, panel y temporizador.
 		private float positionY;
+
 		// Variable que indica el espacio entre botones.
-		private float distanciaEntreBotones;
-		private float posicionXTienda;
-		private float posicionXEstadistica;
-		private float posicionXPanel;
-		private float posicionXTermometro;
+		private float tamanoEstandasX;
+		private float tamanoEstandasY;
+		private float espacio;
+		private float tamanoXPanel;
+		private float tamanoXReloj;
+
 		private Vector2 scrollPosition;
 		private float vertScrollPosition;
 
@@ -35,12 +38,12 @@ namespace Assets.Code.States
 
 		public void StateUpdate ()
 		{
-			positionY = Screen.height - ((Screen.width * 0.17f)+ Screen.width * 0.03f);
-			posicionXTienda = ((Screen.width * 0.17f) + distanciaEntreBotones);
-			distanciaEntreBotones = Screen.width * 0.025f;
-			posicionXEstadistica = Screen.width * 0.17f + distanciaEntreBotones + posicionXTienda;
-			posicionXPanel = Screen.width * 0.14f + distanciaEntreBotones + posicionXEstadistica;
-			posicionXTermometro = Screen.width * 0.27f + distanciaEntreBotones;
+			tamanoEstandasX = Screen.height * 0.1199F; 
+			tamanoEstandasY = Screen.height * 0.11F;
+			tamanoXPanel = Screen.height * 0.0939F;
+			tamanoXReloj = Screen.height * 0.2094F;
+			positionY = Screen.height - tamanoEstandasY;
+			espacio = (Screen.width - (tamanoXReloj + tamanoXPanel + (tamanoEstandasX * 2)))/5;
 
 		}
 
@@ -52,37 +55,37 @@ namespace Assets.Code.States
 			{
 				manager.SwitchState(new StateHome(manager));
 			}
-
-			//Este boton me permite entrar a la pantala de tienda
-			if(GUI.Button(new Rect(Screen.width - Screen.width * 0.17f - distanciaEntreBotones, positionY, Screen.width * 0.17f, Screen.width * 0.17f), "Tienda", "buttonStore"))
+			//----------------------------------------------------------------------------------------------------------------------------
+			//Este boton me permite entrar a la pantalla de tienda
+			if(GUI.Button(new Rect(Screen.width - (tamanoEstandasX + (espacio*2)),positionY - espacio,tamanoEstandasX, tamanoEstandasY), "Tienda", "buttonStore"))
 			{
 	
 			}
-
-			//Este boton me permite entrar a la pantala de cupones 50%
-			if(GUI.Button(new Rect(Screen.width - posicionXEstadistica, positionY, Screen.width * 0.18f, Screen.width * 0.17f), "Cupones", "buttonCup50"))
+			//----------------------------------------------------------------------------------------------------------------------------
+			//Este boton me permite entrar a la pantalla de cupones
+			if(GUI.Button(new Rect(Screen.width - espacio - (tamanoEstandasX * 2), positionY - espacio, tamanoEstandasX, tamanoEstandasY), "Cupones", "buttonCupones"))
 			{
-
+				Debug.Log(tamanoEstandasX + "   "+tamanoEstandasY + "  espacio:"+ espacio);
 			}
-
-			//Este boton me permite entrar a la pantala de Panel
-			if(GUI.Button(new Rect(Screen.width - posicionXPanel, positionY - Screen.width * 0.015f, Screen.width * 0.15f, Screen.width * 0.20f), "Panel", "buttonPanel"))
+			//----------------------------------------------------------------------------------------------------------------------------
+			//Este boton me permite entrar a la pantalla de Panel
+			if(GUI.Button(new Rect(Screen.width - tamanoXPanel - (tamanoEstandasX * 2),positionY - espacio, tamanoXPanel, tamanoEstandasY), "Panel", "buttonPanel"))
 			{
 				manager.SwitchState(new StatePlay(manager));
 			}
-
+			//----------------------------------------------------------------------------------------------------------------------------
 			scrollPosition = GUI.BeginScrollView (new Rect(Screen.width * 0.05F, Screen.height * 0.20F, Screen.width * 0.45F, Screen.height * 0.60F), 
 			                                     scrollPosition, new Rect(0, 0, Screen.width * 0.4F, Screen.height * 3));
 
 				GUI.DrawTexture (new Rect(0, 0, Screen.width * 0.4F, 100), termometro);
 
 			GUI.EndScrollView ();
-
+			//----------------------------------------------------------------------------------------------------------------------------
 			//Textura de Reloj
-			GUI.DrawTexture (new Rect (Screen.width - (posicionXPanel + Screen.width * 0.42f), positionY, Screen.width * 0.4f, Screen.width * 0.17f), imagenReloj, ScaleMode.StretchToFill, true, 10.0F);
+			GUI.DrawTexture (new Rect (espacio, positionY - espacio, tamanoXReloj, tamanoEstandasY -(espacio*3)), imagenReloj, ScaleMode.StretchToFill, true, 10.0F);
 
 			//Textura de termometro
-			GUI.DrawTexture (new Rect (Screen.width - posicionXTermometro, Screen.height * 0.24f, Screen.width * 0.21f, Screen.height * 0.52f), termometro, ScaleMode.StretchToFill, true, 10.0F);
+			GUI.DrawTexture (new Rect (15, positionY, tamanoXPanel, tamanoEstandasY - espacio), termometro, ScaleMode.StretchToFill, true, 10.0F);
 		}
 
 		public void OnStateLevelLoad (int level)

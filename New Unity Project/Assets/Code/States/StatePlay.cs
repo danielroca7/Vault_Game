@@ -14,6 +14,19 @@ namespace Assets.Code.States
 		private GameObject module;
 		private List<GameObject> modulePrefabs;
 		private DataPlayState dataPlayState;
+		private GameObject tecladoPlay;
+		private GUITexture digito0;
+		private GUITexture digito1;
+		private GUITexture digito2;
+		private GUITexture digito3;
+		private GUITexture digito4;
+		private GUITexture digito5;
+		private GUITexture digito6;
+		private GUITexture digito7;
+		private GUITexture digito8;
+		private GUITexture digito9;
+
+
 		
 		public StatePlay (GameManager managerRef)
 		{
@@ -29,7 +42,10 @@ namespace Assets.Code.States
 		
 		public void StateUpdate ()
 		{
-			
+			//digito0.pixelInset.width = 10F;
+
+
+
 		}
 		
 		public void ShowIt ()
@@ -46,6 +62,20 @@ namespace Assets.Code.States
 		public void OnStateLevelLoad (int level)
 		{
 			dataPlayState = GameObject.Find ("DataPlayState").GetComponent<DataPlayState> ();
+			tecladoPlay = GameObject.Find ("GUI_pop_numberPad");
+			digito0 = tecladoPlay.transform.Find ("GUI_pop_number0").GetComponent<GUITexture>();
+			digito1 = tecladoPlay.transform.Find ("GUI_pop_number1").GetComponent<GUITexture>();
+			digito2 = tecladoPlay.transform.Find ("GUI_pop_number2").GetComponent<GUITexture>();
+			digito3 = tecladoPlay.transform.Find ("GUI_pop_number3").GetComponent<GUITexture>();
+			digito4 = tecladoPlay.transform.Find ("GUI_pop_number4").GetComponent<GUITexture>();
+			digito5 = tecladoPlay.transform.Find ("GUI_pop_number5").GetComponent<GUITexture>();
+			digito6 = tecladoPlay.transform.Find ("GUI_pop_number6").GetComponent<GUITexture>();
+			digito7 = tecladoPlay.transform.Find ("GUI_pop_number7").GetComponent<GUITexture>();
+			digito8 = tecladoPlay.transform.Find ("GUI_pop_number8").GetComponent<GUITexture>();
+			digito9 = tecladoPlay.transform.Find ("GUI_pop_number9").GetComponent<GUITexture>();
+
+
+
 
 			this.modulePrefabs = dataPlayState.modulePrefabs;
 			
@@ -57,7 +87,7 @@ namespace Assets.Code.States
 		
 		private int CualEs ()
 		{
-			return 0;
+			return 2;
 		}
 	}
 }

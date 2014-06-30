@@ -61,6 +61,10 @@ namespace Assets.Code.States
 			soundFXVolume = GUI.HorizontalSlider(new Rect(Screen.width * 0.65f, Screen.height * 0.20f,
 			                                              Screen.width * 0.25f, 20), soundFXVolume, 0, 1);
 
+			if(GUI.Button(new Rect(Screen.width * 0.1F, Screen.width * 0.1f, Screen.width * 0.15f, Screen.width * 0.20f), "Panel", "buttonPanel"))
+			{
+				manager.SwitchState(new StatePlay(manager));
+			}
 			if(GUI.Button(new Rect(Screen.width*0.2f, Screen.height * 0.5f, Screen.width - Screen.width*0.4f, 20), 
 			              "Reglas de Juego"))
 			{}

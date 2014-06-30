@@ -9,6 +9,9 @@ public class GameData : MonoBehaviour {
 	public float musicVolume;
 	public float soundFXVolume;
 	public int nivel;
+
+	public Texture BarraEncabezadoAplicacion;
+
 	public Texture imagenReloj;
 	public Texture termometro;
 
@@ -28,7 +31,6 @@ public class GameData : MonoBehaviour {
 	public Texture[] payMethod;
 
 	//Texturas2D encabezado de la aplicacion
-	public Texture BarraEncabezadoAplicacion;
 
 	void Start ()
 	{
@@ -44,6 +46,7 @@ public class GameData : MonoBehaviour {
 
 	void Update ()
 	{
+
 		audio.volume = musicVolume;	
 	}
 }
