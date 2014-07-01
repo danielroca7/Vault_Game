@@ -57,22 +57,22 @@ namespace Assets.Code.States
 			}
 			//----------------------------------------------------------------------------------------------------------------------------
 			//Este boton me permite entrar a la pantalla de tienda
-			if(GUI.Button(new Rect(Screen.width - (tamanoEstandasX + (espacio*2)),positionY - espacio,tamanoEstandasX, tamanoEstandasY), "Tienda", "buttonStore"))
-			{
+			//if(GUI.Button(new Rect(Screen.width - (tamanoEstandasX + (espacio*2)),positionY - espacio,tamanoEstandasX, tamanoEstandasY), "Tienda", "buttonStore"))
+			//{
 	
-			}
+			//}
 			//----------------------------------------------------------------------------------------------------------------------------
 			//Este boton me permite entrar a la pantalla de cupones
-			if(GUI.Button(new Rect(Screen.width - espacio - (tamanoEstandasX * 2), positionY - espacio, tamanoEstandasX, tamanoEstandasY), "Cupones", "buttonCupones"))
-			{
-				Debug.Log(tamanoEstandasX + "   "+tamanoEstandasY + "  espacio:"+ espacio);
-			}
+			//if(GUI.Button(new Rect(Screen.width - espacio - (tamanoEstandasX * 2), positionY - espacio, tamanoEstandasX, tamanoEstandasY), "Cupones", "buttonCupones"))
+			//{
+			//	Debug.Log(tamanoEstandasX + "   "+tamanoEstandasY + "  espacio:"+ espacio);
+			//}
 			//----------------------------------------------------------------------------------------------------------------------------
 			//Este boton me permite entrar a la pantalla de Panel
-			if(GUI.Button(new Rect(Screen.width - tamanoXPanel - (tamanoEstandasX * 2),positionY - espacio, tamanoXPanel, tamanoEstandasY), "Panel", "buttonPanel"))
-			{
-				manager.SwitchState(new StatePlay(manager));
-			}
+			//if(GUI.Button(new Rect(Screen.width - tamanoXPanel - (tamanoEstandasX * 2),positionY - espacio, tamanoXPanel, tamanoEstandasY), "Panel", "buttonPanel"))
+			//{
+			//	manager.SwitchState(new StatePlay(manager));
+			//}
 			//----------------------------------------------------------------------------------------------------------------------------
 			scrollPosition = GUI.BeginScrollView (new Rect(Screen.width * 0.05F, Screen.height * 0.20F, Screen.width * 0.45F, Screen.height * 0.60F), 
 			                                     scrollPosition, new Rect(0, 0, Screen.width * 0.4F, Screen.height * 3));
@@ -82,10 +82,10 @@ namespace Assets.Code.States
 			GUI.EndScrollView ();
 			//----------------------------------------------------------------------------------------------------------------------------
 			//Textura de Reloj
-			GUI.DrawTexture (new Rect (espacio, positionY - espacio, tamanoXReloj, tamanoEstandasY -(espacio*3)), imagenReloj, ScaleMode.StretchToFill, true, 10.0F);
+			//GUI.DrawTexture (new Rect (espacio, positionY - espacio, tamanoXReloj, tamanoEstandasY -(espacio*3)), imagenReloj, ScaleMode.StretchToFill, true, 10.0F);
 
 			//Textura de termometro
-			GUI.DrawTexture (new Rect (15, positionY, tamanoXPanel, tamanoEstandasY - espacio), termometro, ScaleMode.StretchToFill, true, 10.0F);
+			//GUI.DrawTexture (new Rect (15, positionY, tamanoXPanel, tamanoEstandasY - espacio), termometro, ScaleMode.StretchToFill, true, 10.0F);
 		}
 
 		public void OnStateLevelLoad (int level)
