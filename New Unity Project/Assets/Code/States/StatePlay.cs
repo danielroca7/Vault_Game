@@ -14,7 +14,6 @@ namespace Assets.Code.States
 		private GameObject module;
 		private List<GameObject> modulePrefabs;
 		private DataPlayState dataPlayState;
-		private Teclado tecladoPlay;
 		private List<GameObject> digitosTeclado;
 
 
@@ -58,8 +57,6 @@ namespace Assets.Code.States
 		public void OnStateLevelLoad (int level)
 		{
 			dataPlayState = GameObject.Find ("DataPlayState").GetComponent<DataPlayState> ();
-			this.digitosTeclado = tecladoPlay.digitosTeclado;
-
 
 
 			this.modulePrefabs = dataPlayState.modulePrefabs;

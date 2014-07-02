@@ -1,17 +1,21 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\States\StatePlay.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\States\StateHome.cs">
     <Files>
-      <File FileName="Assets\Code\Scripts\RecibirMensaje.cs" Line="15" Column="1" />
+      <File FileName="New Unity Project.sln" Line="1" Column="1" />
+      <File FileName="Assets\Code\States\StateStore.cs" Line="122" Column="1" />
+      <File FileName="Assets\Code\Scripts\DataPlayState.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\Scripts\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\States\StateHist.cs" Line="78" Column="113" />
-      <File FileName="Assets\Code\States\StateMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\States\StateStore.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\States\StateHist.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\States\StateMenu.cs" Line="31" Column="1" />
       <File FileName="Assets\Code\Scripts\GameData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\States\StatePlay.cs" Line="17" Column="1" />
-      <File FileName="Assets\Code\Scripts\DataPlayState.cs" Line="15" Column="1" />
-      <File FileName="Assets\Code\Scripts\Teclado.cs" Line="15" Column="1" />
-      <File FileName="Assets\Code\Scripts\TecladoMensaje.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\States\StatePlay.cs" Line="67" Column="66" />
+      <File FileName="Assets\Code\States\StateLogin.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Scripts\CualquierBoton.cs" Line="23" Column="20" />
+      <File FileName="Assets\Code\States\StateHome.cs" Line="69" Column="1" />
+      <File FileName="Assets\Code\Scripts\RecibirMensaje.cs" Line="11" Column="3" />
+      <File FileName="Assets\Code\Scripts\TecladoMensaje.cs" Line="8" Column="21" />
+      <File FileName="Assets\Code\States\StateProfile.cs" Line="37" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

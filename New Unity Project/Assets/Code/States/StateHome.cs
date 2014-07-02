@@ -7,6 +7,8 @@ namespace Assets.Code.States
 	{
 		private GameManager manager;
 		private GUISkin mySkin;
+		private string irEscena;
+
 
 		public StateHome (GameManager managerRef)
 		{
@@ -19,6 +21,44 @@ namespace Assets.Code.States
 
 		public void StateUpdate ()
 		{
+			this.irEscena = CualquierBoton.irEscena ;
+			if (CualquierBoton.escena == true) 
+			{
+				
+				
+				switch (irEscena)
+				{
+				case "perfil":
+					manager.SwitchState(new StateProfile(manager));
+					break;
+					
+				case "historial":
+					manager.SwitchState(new StateHist(manager));
+					break;
+					
+				case "tienda":
+					manager.SwitchState(new StateStore(manager));
+					break;
+					
+				case "cofiguracion":
+					manager.SwitchState(new StateMenu(manager));
+					break;
+					
+				case "play":
+					manager.SwitchState(new StatePlay(manager));
+					break;
+					
+				case "inicio":
+					manager.SwitchState(new StateHome(manager));
+					break;
+					
+				case "default":
+					
+					break;
+					
+				}
+				
+			}
 
 		}
 
@@ -26,25 +66,6 @@ namespace Assets.Code.States
 		{
 			GUI.skin = mySkin;
 
-			if(GUI.Button(new Rect(Screen.width * 0.35f, Screen.height * 0.7f,70, 20), "Iniciar"))
-			{
-				manager.SwitchState(new StatePlay(manager));
-			}
-
-			if(GUI.Button(new Rect(Screen.width * 0.1f, Screen.height * 0.8f, 50, 50), "Perfil", "buttonProfile"))
-			{
-				manager.SwitchState(new StateProfile(manager));
-			}
-			
-			if(GUI.Button(new Rect(Screen.width * 0.4f, Screen.height * 0.8f, 50, 50), "Confi.", "buttonConfig"))
-			{
-				manager.SwitchState(new StateMenu(manager));
-			}
-			
-			if(GUI.Button(new Rect(Screen.width * 0.7f,Screen.height * 0.8f, 50, 50), "Tienda", "buttonStore"))
-			{
-				manager.SwitchState(new StateStore(manager));
-			}
 		}
 
 		public void OnStateLevelLoad (int level)

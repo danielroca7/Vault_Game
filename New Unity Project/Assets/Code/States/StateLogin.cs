@@ -7,7 +7,6 @@ namespace Assets.Code.States
 	public class StateRegister : InterfacesStados
 	{
 		private GameManager manager;
-		public GameObject cubo;
 		public string userName = "CORREO";
 		public string password = "X X X X X X";
 		private GUISkin mySkin;
@@ -23,8 +22,6 @@ namespace Assets.Code.States
 
 		public void OnStateLevelLoad (int level)
 		{
-			cubo = GameObject.Find ("Cube");
-			cubo.GetComponent<Rotar> ().enabled = true;
 		}
 		public void StateUpdate ()
 		{
